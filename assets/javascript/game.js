@@ -1,85 +1,88 @@
-$(function () {
-    
+$(document).ready(function() {
 
     
-    var begin = true;
-    var reset = false; 
-    var wins = 0; 
-    var losses = 0; 
-    var score_alert = ""; 
-    var minNumber_Total = 19; 
-    var maxNumber_Total = 120; 
-    var minNumber_Button = 1; 
-    var maxNumber_Button = 12; 
-   
-    var randomnumber;  
+        var sum = 0
+        var randomNum = 0
+        var wins = 0
+        var losses = 0 
+        var minNumber_Total = 19; 
+        var maxNumber_Total = 120;
+        var minNumber_Button = 1; 
+        var maxNumber_Button = 12;
+        var diamond1 = 0
+        var diamond2 = 0
+        var diamond3 = 0
+        var diamond4 = 0
+        
+        var gameStart = function(){
 
-    var diamond_1;  
-    var diamond_2; 
-    var diamond_3;
-    var diamond_4;
-    var Sum; 
+        diamond1 = Math.floor(Math.random() * (maxNumber_Button - minNumber_Button + 1) + minNumber_Button);
+        diamond2 = Math.floor(Math.random() * (maxNumber_Button - minNumber_Button + 1) + minNumber_Button);
+        diamond3 = Math.floor(Math.random() * (maxNumber_Button - minNumber_Button + 1) + minNumber_Button);
+        diamond4 = Math.floor(Math.random() * (maxNumber_Button - minNumber_Button + 1) + minNumber_Button);
+        
+        randomNum = Math.floor(Math.random() * (maxNumber_Total - minNumber_Total + 1) + minNumber_Total);
+       
+            $("#randomNum").text(randomNum);
 
- 
-
-
-
-    function resetValues() {
-        randomnumber = Math.floor(Math.random() * (maxNumber_Total - minNumber_Total + 1) + minNumber_Total);
-        diamond_1 = Math.floor(Math.random() * (maxNumber_Button - minNumber_Button + 1) + minNumber_Button);
-        diamond_2 = Math.floor(Math.random() * (maxNumber_Button - minNumber_Button + 1) + minNumber_Button);
-        diamond_3 = Math.floor(Math.random() * (maxNumber_Button - minNumber_Button + 1) + minNumber_Button);
-        diamond_4 = Math.floor(Math.random() * (maxNumber_Button - minNumber_Button + 1) + minNumber_Button);
-        Sum = 0;
-        $(".Score").html(randomnumber);
-        $("#Sum").html(Sum);
-    }
- 
-    
-    
-   
-   
-    $("#Score").html(randomnumber);
- 
+            userScore = 0
+            $("#sum").text(" " + sum);
 
 
 
-    $("#diamond_1, #diamond_2, #diamond_3, #diamond_4").click(function () {
-    
-                if ($(this).prop('id') == 'Diamond_1') {
-                    Sum = Sum + diamond_1; 
-                }
-                else if ($(this).prop('id') == 'Diamond_2') {
-                    Sum = Sum + diamond_2; 
-                }
-                else if ($(this).prop('id') == 'Diamond_3') {
-                    Sum = Sum + diamond_3; 
-                }
-                else if ($(this).prop('id') == 'Diamond_4') {
-                    Sum = Sum + diamond_4; 
-                }
+            console.log(diamond1);
+            console.log(diamond2);
+            console.log(diamond3);
+            console.log(diamond4);
+            console.log(randomNum);
 
+        };
+
+         gameStart();
+
+        $("#diamond1").click(function(){
+            sum = sum + diamond1;
+            $("#sum").text(" " + sum);
+            compare();
+        });
+
+        $("#diamond2").click(function(){
+            sum = sum + diamond2;
+            $("#sum").text(" " + sum);
+            compare();
+        });
+
+        $("#diamond3").click(function(){
+            sum = sum + diamond3;
+            $("#sum").text(" " + sum);
+            compare();
+        });
+
+        $("#diamond4").click(function(){
+            sum = sum + diamond4;
+            $("#sum").text(" " + sum);
+            compare();
+        });
 
         
-                $("#Sum").html(Sum);
+        var compare = function(){
+            if(sum > randomNum){
+                alert("Sorry, you lost.");
+                losses = losses + 1
+                $("#losses").text(losses);
+                sum = 0;
 
-        if (Sum == randomnumber) {
-           
-            wins += 1;
-            $("#wins").html(wins); 
-            $("#score_alert").html("<p>You Won!</p>"); 
-            resetValues(); 
-        }
-        else if (Sum > randomnumber) {
+              gameStart();
+                
+            }
+            if (sum === randomNum){
+                alert("WINNER!");
+                wins = wins + 1
+                $("#wins").text(wins);
+                sum = 0;
+                gameStart();
+            }	
+        };
 
-            losses += 1;
-            $("#loses").html(losses);
-            $("#score_alert").html("<p>You Lost!</p>");
-            resetValues(); 
 
-        }
-
-        });
-    
-
-});
+    });

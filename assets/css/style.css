@@ -1,76 +1,110 @@
 body{
-    background-image: url("infinity.gif")
-}
+        background-image: url("../images/14770.jpg");
+        height: 100%; 
+        margin: 0;
+        background-position:left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px;
+   }
+    
 
 
 #header{
-    font-weight: bold;
-    font-size: 30px;
-     height:50px;
-     width:275px;
-     background:orange;
-     color:white;
-     text-align: center;
-     padding-top:20px;
-     margin-left: 10px;
-    
+        font-weight: bold;
+        font-size: 30px;
+        height:50px;
+        width:500px;
+        color: #ffffff;
+        background-color: rgba( 0, 0, 0, .7);
+        border: solid 2px #ffffff;
+        text-align: center;
+        padding-top:20px;
+        margin-left: 10px;
+        
 }
 
 .rules { 
-    height:230px;
-    width:450px;
-    background:rgb(250, 215, 184);
-    color:green;
-    margin-top:10px;        
-    padding-top:10px;
-    margin-left: 10px;
+        height:230px;
+        width:450px;
+        color: #ffffff;
+        background-color: rgba( 0, 0, 0, .7);
+        border: solid 2px #ffffff;
+        margin-top:10px;        
+        padding-top:10px;
+        margin-left: 10px;
+        padding:25px;
+        text-align: center;
+    
 }  
 
 
-#parentRanwlBox{
-    margin:10px 0 0 0px;
-    width: 550px;
-    height:100px;
+    #parentBox{
+        margin:10px 0 0 0px;
+        width: 550px;
+        height:100px;
 }
 
-.ScoreBoard{
-    width:35%;
-    height: 90%;
-    float:left;
-    background:green;
-    margin-left: 10px;
+    .randomNum {
+        text-align: center;
+        margin-top:10px;
+        margin-top:20%;
 }
 
-.myStatus{
-    margin-left:10px;
-    width:27%;
-    height:90%;
-    float:left;
-    background:rgb(77, 203, 253);
+    #divider{
+        width:43%;
+        height: 90%;
+        float:left;
+        background-color: rgba( 0, 0, 0, .7);
+        border: solid 2px #ffffff;
+        color:#ffffff;
+        margin-left: 15px;
 }
 
-#buttons{
-   height:90px;
-    width:378px;
-    margin-left: 10px;
+    .results {
+        padding-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+}
+
+    #winsNloss{
+        margin-left:10px;
+        width:43%;
+        height:90%;
+        float:left;
+         background-color: rgba( 0, 0, 0, .7);
+         border: solid 2px #ffffff;
+    color:#ffffff;
+}
+
+    #buttons{
+        height:90px;
+        width:378px;
+        margin-left: 65px;
 
 }
 
     #total{
-        color:rgba(255, 255, 255, 0.795);
-        background:rgb(4, 167, 131);
+        background-color: rgba( 0, 0, 0, .7);
+        border: solid 2px #ffffff;
+        color:#ffffff;
         height:20px;
-        width:250px;
+        width:480px;
         margin-left: 10px;
-        padding: 5 0 2 0px;
+        padding: 10px;
 }
 
-     #Sum{
-    background:rgb(4, 167, 131);
-    height:85px;
-    width:250px;
-    margin-left: 10px;
-    margin-top:5px;
+     #sum{
+        background-color: rgba( 0, 0, 0, .7);
+        border: solid 2px #ffffff;
+        color:#ffffff;
+        height: 25px;
+        width: 460px;
+        margin-left: 10px;
+        margin-top: 5px;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 20px;
 }
 
 
